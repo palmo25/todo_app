@@ -13,7 +13,7 @@
 
 <%= for todolist <- @todolists do  %>
     <ul>
-        <li><%= todolist.description %></li>
+        <li><%= todolist.description %> - <span><%= link "Show Todolist", to: Routes.todolist_path(@conn, :show, todolist) %></span></li>
     </ul>
 <% end %>
 

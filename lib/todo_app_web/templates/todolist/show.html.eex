@@ -1,4 +1,4 @@
-<h1>Show Item</h1>
+<h1>Show Todolist</h1>
 
 <ul>
 
@@ -6,7 +6,9 @@
     <strong>Name:</strong>
     <%= @todolist.description %>
   </li>
-
+    <%= for item <- @todolist.items do %>
+    <li><%= item.name %></li>
+    <% end %>
 </ul>
 
 

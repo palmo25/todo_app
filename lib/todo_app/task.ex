@@ -116,5 +116,11 @@ defmodule TodoApp.Task do
   def change_todolist(%Todolist{} = todolist) do
     Todolist.changeset(todolist, %{})
   end
-   def get_todolist!(id), do: Repo.get!(Todolist, id)
+
+  def get_todolist!(id), do: Repo.get!(Todolist, id)
+
+  def get_todolist_with_items(id) do
+    Repo.get!(Todolist, id) 
+    |> Repo.preload([:items])
+  end
 end

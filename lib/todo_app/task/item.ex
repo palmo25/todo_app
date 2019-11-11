@@ -12,8 +12,8 @@ defmodule TodoApp.Task.Item do
   @doc false
   def changeset(item, attrs) do
     item
-    |> cast(attrs, [:name])
-    |> validate_required([:name])
+    |> cast(attrs, [:name, :todolist_id])
+    |> validate_required([:name, :todolist_id])
     |> assoc_constraint(:todolist)
   end
 end
