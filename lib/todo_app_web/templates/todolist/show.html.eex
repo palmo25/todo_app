@@ -1,0 +1,13 @@
+<h1>Show Item</h1>
+
+<ul>
+
+  <li>
+    <strong>Name:</strong>
+    <%= @todolist.description %>
+  </li>
+
+</ul>
+
+
+<span><%= link "Back", to: Routes.todolist_path(@conn, :index) %></span>

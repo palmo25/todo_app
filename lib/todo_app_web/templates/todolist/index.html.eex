@@ -1,0 +1,19 @@
+<h1>Todolists</h1>
+
+<%= form_for @todolist, Routes.todolist_path(@conn, :create), fn f -> %>
+  <label>
+    Todolist name: <%= text_input f, :description %>
+  </label>
+
+
+  <%= submit "Create todolist" %>
+<% end %>
+
+
+
+<%= for todolist <- @todolists do  %>
+    <ul>
+        <li><%= todolist.description %></li>
+    </ul>
+<% end %>
+
